@@ -1,0 +1,56 @@
+&laquo; <%= link_to "back", "javascript:history.back()" %>
+<h1><%= @contact.full_name %></h1>
+
+<dl class="contact-details dl-horizontal">
+  <dt><%= t(:first_name) %></dt>
+  <dd><%= @contact.first_name %></dd>
+
+  <dt><%= t(:last_name) %></dt>
+  <dd><%= @contact.last_name %></dd>
+
+  <dt><%= t(:nickname) %></dt>
+  <dd><%= @contact.nickname %></dd>
+
+  <dt><%= t(:phones) %></dt>
+  <dd>
+    <ul>
+      <% Array.wrap(@contact.phones).each do |phone|-%>
+        <li><%= link_to phone, "tel:#{phone}" -%></li>
+      <% end -%>
+    </ul>
+  </dd>
+
+  <dt><%= t(:emails) %></dt>
+  <dd>
+    <ul>
+      <% Array.wrap(@contact.emails).each do |email|-%>
+        <li><%= link_to email -%></li>
+      <% end -%>
+    </ul>
+  </dd>
+
+  <dt><%= t(:social_links) %></dt>
+  <dd>
+    <ul>
+      <% Array.wrap(@contact.social_links).each do |social_link|-%>
+        <li><%= link_to social_link -%></li>
+      <% end -%>
+    </ul>
+  </dd>
+
+  <dt><%= t(:addresses) %></dt>
+  <dd>
+    <ul>
+      <% Array.wrap(@contact.addresses).each do |address|-%>
+        <li>
+          <div><strong><%= address['street_name']+" "+address['street_number'].to_s %></strong></div>
+          <div><%= address['postcode'].to_s+" "+address['city'] %></div>
+          <div><em><%= address['country'] %></em></div>
+        </li>
+      <% end -%>
+    </ul>
+  </dd>
+
+  <dt><%= t(:notes) %></dt>
+  <dd><%= @contact.notes %></dd>
+</dl>
