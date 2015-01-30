@@ -1,0 +1,9 @@
+FROM postgres:9.4
+
+MAINTAINER Rafał "RaVbaker" Piekarski <ravbaker@gmail.com>
+
+ENV POSTGRES_PASSWORD=postgres
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+CMD ["postgres"]
