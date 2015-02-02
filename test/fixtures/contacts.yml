@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  emails: MyString
-  addresses: 
-  notes: MyText
-  social_links: MyString
-
-two:
-  first_name: MyString
-  last_name: MyString
-  emails: MyString
-  addresses: 
-  notes: MyText
-  social_links: MyString
+bob:
+  first_name: Bob
+  last_name: Kent
+  emails:
+    - bob.kent@daily-planet.com
+    - bob@yahoo.com
+  addresses:
+    - street_name: Plaza
+      street_number: 42
+      postcode: 90210
+      city: Metropolis
+      country: United States
+  notes: Good boy
+  social_links:
+    - http://twitter.com/bob
